@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security or participant-data exposure
+    url: https://github.com/Tran-Memory-Lab/.github/blob/main/SECURITY.md
+    about: Report privately to a lab administrator. Do not open a public issue.
