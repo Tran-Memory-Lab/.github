@@ -1,0 +1,44 @@
+name: Engineering task
+description: Code, tooling, pipeline, or build work that needs a commit to this repository.
+body:
+  - type: markdown
+    attributes:
+      value: "After filing, add the issue to this repository's Project board and set Area or Component, Priority, and Rig Verification on the card. The form cannot set board fields."
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: What problem this solves or what it unblocks.
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What to do
+      description: Concrete scope. Link files, decisions, or related issues.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: Checkable acceptance criteria, including any headset or scientific check.
+    validations:
+      required: true
+  - type: dropdown
+    id: headset
+    attributes:
+      label: Needs a headset check on the rig?
+      description: "If yes, the PR must use Refs #N, not Closes #N, and the issue stays open until rig evidence is recorded."
+      options:
+        - "No (code only)"
+        - "Yes"
+    validations:
+      required: true
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Data boundary
+      options:
+        - label: This work adds no raw participant data, raw gaze logs, identifiers, or uncurated video/audio to Git.
+          required: true

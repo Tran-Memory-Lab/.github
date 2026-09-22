@@ -1,0 +1,34 @@
+name: Bug report
+description: Something in this repository behaves incorrectly.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should happen
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: "Steps, commit, and environment. Do not paste participant data or raw logs; describe them or use a synthetic example."
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Seen where
+      options:
+        - "Editor / local run"
+        - "On the VR rig (headset)"
+        - "CI"
+        - "Analysis output"
+    validations:
+      required: true
