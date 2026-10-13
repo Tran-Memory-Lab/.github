@@ -2,23 +2,55 @@ name: Bug report
 description: Something in this repository behaves incorrectly.
 labels: ["bug"]
 body:
-  - type: textarea
-    id: observed
+  - type: markdown
     attributes:
-      label: What happened
+      value: "Do not paste participant data or raw logs. Describe them, or use a synthetic example."
+  - type: textarea
+    id: summary
+    attributes:
+      label: "🎯 Summary & High-Level Plan"
+      description: "One to three sentences. Sentence 1: exactly what is wrong. Sentences 2-3: the likely cause and the fix, or how the cause will be found."
     validations:
       required: true
   - type: textarea
-    id: expected
+    id: observed_expected
     attributes:
-      label: What should happen
+      label: "🔍 Observed vs. Expected Behavior"
+      placeholder: |
+        Observed: 
+        Expected: 
     validations:
       required: true
   - type: textarea
     id: repro
     attributes:
-      label: How to reproduce
-      description: "Steps, commit, and environment. Do not paste participant data or raw logs; describe them or use a synthetic example."
+      label: "🕹️ Steps to Reproduce"
+      placeholder: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "📋 Evidence & Environment"
+      description: Commit SHA, runtime and package versions, operating system, logs, a report path.
+    validations:
+      required: false
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: "🚫 Out of Scope (Non-Goals for this Fix)"
+    validations:
+      required: false
+  - type: textarea
+    id: done
+    attributes:
+      label: "✅ Done When (Regression & Acceptance Criteria)"
+      value: |
+        - [ ] The steps above no longer reproduce the fault
+        - [ ] A test fails before the fix and passes after it: 
     validations:
       required: true
   - type: dropdown
