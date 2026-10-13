@@ -1,30 +1,58 @@
-name: Engineering task
-description: Code, tooling, pipeline, or build work that needs a commit to this repository.
+name: Task
+description: Code, tooling, pipeline, analysis, or writing-build work that needs a commit to this repository.
 body:
   - type: markdown
     attributes:
-      value: "After filing, add the issue to this repository's Project board and set Area or Component, Priority, and Rig Verification on the card. The form cannot set board fields."
+      value: "After filing, add the issue to this repository's Project board and set its fields on the card. The form cannot set board fields."
+  - type: textarea
+    id: summary
+    attributes:
+      label: "🎯 Summary & High-Level Plan"
+      description: "One to three sentences. Sentence 1: the exact problem or requirement. Sentences 2-3: the mechanism that solves it."
+    validations:
+      required: true
   - type: textarea
     id: why
     attributes:
-      label: Why
+      label: "💡 Why"
       description: What problem this solves or what it unblocks.
     validations:
       required: true
   - type: textarea
     id: what
     attributes:
-      label: What to do
+      label: "🛠️ What to do"
       description: Concrete scope. Link files, decisions, or related issues.
     validations:
       required: true
   - type: textarea
+    id: out_of_scope
+    attributes:
+      label: "🚫 Out of Scope (Non-Goals)"
+      description: What must not be touched or attempted under this issue.
+    validations:
+      required: false
+  - type: textarea
     id: done
     attributes:
-      label: Done when
-      description: Checkable acceptance criteria, including any headset or scientific check.
+      label: "✅ Done When (Acceptance Criteria)"
+      description: One checkbox per criterion, each answerable yes or no.
+      value: |
+        - [ ] 
+        - [ ] 
     validations:
       required: true
+  - type: textarea
+    id: agent_contract
+    attributes:
+      label: "🤖 Agent Contract"
+      description: Fill this in only if an AI agent may take the item.
+      placeholder: |
+        Write scope: the files or folders the agent may change.
+        Non-goals: Out of Scope above, plus anything an agent in particular must leave alone.
+        Verification: the command that shows it is correct.
+    validations:
+      required: false
   - type: dropdown
     id: headset
     attributes:

@@ -1,0 +1,44 @@
+name: Spike
+description: A time-boxed investigation that answers a question before production work starts.
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: "🎯 Summary & High-Level Plan"
+      description: "One to three sentences. Sentence 1: the unknown and the decision that waits on it. Sentences 2-3: how it will be investigated."
+    validations:
+      required: true
+  - type: textarea
+    id: questions
+    attributes:
+      label: "❓ Questions to Answer"
+      description: Each one answerable with evidence. The spike is finished when these are answered, whatever the answer is.
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: input
+    id: timebox
+    attributes:
+      label: "⏱️ Timebox"
+      description: The most time this is worth. When it runs out, report what is known and stop.
+      placeholder: "e.g. 4 hours"
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: "📦 Deliverables"
+      description: What is left behind. A decision record, a prototype branch, benchmark numbers, a recommendation.
+      value: |
+        - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: "🚫 Out of Scope (Non-Goals)"
+      description: A spike ships no production code unless this says otherwise.
+    validations:
+      required: false
