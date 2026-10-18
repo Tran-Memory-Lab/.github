@@ -23,12 +23,11 @@ same kind of its own**. Nothing here is copied into, merged with, or enforced on
 - **Commit razor:** if closing an item needs a commit to a repository, it is a GitHub issue on
   that repository's Project board. If it does not (IRB, scheduling, protocol wording, writing), it
   is tracked outside GitHub. Never track the same item in both places.
-- New Project boards start from the organization template **`Tran Memory Lab Work Template`**.
-  It uses one Status lifecycle (`Triage → Backlog → Ready → In Progress → In Review → Done`),
-  `Area` for VR work, `Component` for scientific-pipeline work, `Priority`, `Rig Verification`,
-  and `Due Date`. There is no separate headset column.
-- An issue form can add an issue to a board, but it cannot set the board's fields. Set `Area` or
-  `Component`, `Priority`, and `Rig Verification` on the card yourself.
+- **Each repository's `docs/agents/TRACKING.md`** defines its board: the fields, their options,
+  which ones you set by hand, and how issues are filed and closed. Read it before filing or moving
+  an issue. Field names differ between repositories, so this file does not list them.
+- New boards are copied from the organization template **`Tran Memory Lab Work Template`** by the
+  lab's tracking setup, which also writes that repository's `TRACKING.md`.
 
 ## Writing an issue
 
@@ -52,15 +51,15 @@ request template mirrors the issue: the author ticks the issue's own criteria.
 A merged pull request shows that code was reviewed and integrated. It never shows that the
 behaviour was checked on the physical VR rig, and it never shows that a scientific result is valid.
 
-**Headset-required issues** (`Rig Verification: Needs Headset Check`):
+Work that only a person can check (in a headset, a browser, on a rig) stays open after merge:
 
-1. Write `Refs #N` in the pull request description, **not** `Closes #N`, `Fixes #N`, or
-   `Resolves #N`. A closing keyword closes the issue on merge and moves it to `Done`.
-2. After merge the issue stays open in `In Review` with `Needs Headset Check`.
-3. Only after someone checks the behaviour in the headset and records the evidence on the issue
-   does a person set `Rig Verification: Verified on Rig`, close the issue, and move it to `Done`.
+1. Its pull request references the issue without a closing keyword (`Refs #N`, not `Closes #N`,
+   `Fixes #N`, or `Resolves #N`). A closing keyword closes the issue on merge.
+2. The issue stays open until someone checks the behaviour and records the evidence on it.
+3. Only then does a person mark it verified, close it, and move it to `Done`.
 
-**Code-only issues** may use `Closes #N` and reach `Done` after review and merge.
+The field that marks this work, and its option names, are in the repository's
+`docs/agents/TRACKING.md`. Code-only issues may use `Closes #N` and reach `Done` after review and merge.
 
 ## Data boundary
 
